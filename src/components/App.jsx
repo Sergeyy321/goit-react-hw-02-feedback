@@ -1,4 +1,9 @@
 export const App = () => {
+ const  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
   return (
     <div
       style={{
@@ -10,7 +15,7 @@ export const App = () => {
         color: '#010101'
       }}
     >
-      React homework template
+
     </div>
   );
 };
