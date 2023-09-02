@@ -1,6 +1,60 @@
+import { Statistics } from './Statistics/Statistics';
+import { Section } from './Section/Section';
+import {StatisticTitleError} from './Statistics/Statistics.styled'
+import React, { Component } from 'react';
+import {Feedback} from './Feedback/Feedback'
+class App extends Component {
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
 
-import Section from './section';
+  onClick = el => {
+    this.setState(prevState => {
+      return {
+        [el.target.textContent.toLowerCase()]:
+          prevState[el.target.textContent.toLowerCase()] + 1,
+      };
+    });
+  };
 
-export const App = () => {
-  return <Section />;
+  countTotalFeedback = () => {
+    const total = Object.values(this.state).reduce(
+      (previousValue, currentValue) => previousValue + currentValue
+    );
+    return total;
+  };
+  countPositiveFeedbackPercentage = () => {
+    return this.state.good !== 0
+      ? Math.round((this.state.good / this.countTotalFeedback()) * 100)
+      : 0;
+  };
+
+  render() {
+    const totalFeedback = this.countTotalFeedback();
+   const options = Object.keys(this.state);
+    return (
+      <div>
+        <div title={'Please leave feedback'}>
+          <Feedback onFeedback={this.onClick} options={options} />
+        </div>
+
+        <div title={'Statistics'}>
+          {totalFeedback > 0 ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={totalFeedback}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <StatisticTitleError>There is no feedback</StatisticTitleError>
+          )}
+        </div>
+      </div>
+    );
+  }
 };
+export default App;
