@@ -5,6 +5,7 @@ export const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
  
     return (
       <StatisticList>
+      
         <li>
           Good: <span>{good}</span>
         </li>

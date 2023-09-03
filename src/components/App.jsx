@@ -36,11 +36,11 @@ class App extends Component {
    const options = Object.keys(this.state);
     return (
       <div>
-        <div title={'Please leave feedback'}>
+        <Section title={'Please leave feedback'}>
           <Feedback onFeedback={this.onClick} options={options} />
-        </div>
+        </Section>
 
-        <div title={'Statistics'}>
+        <Section title={'Statistics'}>
           {totalFeedback > 0 ? (
             <Statistics
               good={this.state.good}
@@ -52,7 +52,7 @@ class App extends Component {
           ) : (
             <StatisticTitleError>There is no feedback</StatisticTitleError>
           )}
-        </div>
+        </Section>
       </div>
     );
   }
