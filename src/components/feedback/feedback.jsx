@@ -5,7 +5,7 @@ import { BtnStyled } from './Feedback.styled';
 export const Feedback = ({ options, onFeedback }) => {
   return options.map(el => (
     <BtnStyled key={el} onClick={onFeedback}>
-      {el}
+      {el} 
     </BtnStyled>
   ));
 };

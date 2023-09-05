@@ -37,7 +37,10 @@ class App extends Component {
     return (
       <div>
         <Section title={'Please leave feedback'}>
-          <Feedback onFeedback={this.onClick} options={options} />
+          <Feedback
+            onFeedback={this.onClick}
+            options={options}
+          />
         </Section>
 
         <Section title={'Statistics'}>
