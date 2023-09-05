@@ -1,6 +1,6 @@
-import { Statistics } from 'components/Statistics/Statistics';
+import { Statistics } from './statistics/Statistics';
 import { Section } from './Section/Section';
-import {StatisticTitleError} from './Statistics/Statistics.styled'
+import {StatisticTitleError} from './statistics/Statistics.styled'
 import React, { Component } from 'react';
 import {Feedback} from './Feedback/Feedback'
 class App extends Component {
