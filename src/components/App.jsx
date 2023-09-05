@@ -14,7 +14,7 @@ class App extends Component {
     this.setState(prevState => {
       return {
         [el.target.textContent.toLowerCase()]:
-          prevState[el.target.textContent.toLowerCase()] + 1,
+           prevState[el.target.textContent.toLowerCase()] + 1,
       };
     });
   };
