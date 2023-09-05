@@ -1,5 +1,5 @@
 import { Statistics } from './statistics/statistics';
-import { Section } from './Section/Section';
+import { Section } from './section/section';
 import {StatisticTitleError} from './statistics/statistics.styled'
 import React, { Component } from 'react';
 import {Feedback} from './feedback/feedback'
