@@ -1,4 +1,4 @@
-import { Statistics } from './Statistics/Statistics';
+import { Statistics } from './statistics/Statistics';
 import { Section } from './Section/Section';
 import {StatisticTitleError} from './Statistics/Statistics.styled'
 import React, { Component } from 'react';
